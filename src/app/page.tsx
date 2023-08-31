@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <main>
       <Banner/>
-      <div style={{margin:"20px", display:"flex",
-      flexDirection:"row", alignContent:"space-around",
-      justifyContent:"space-around", flexWrap:"wrap"}}>
-        <InformationCard/>
+      <div className='m-5 flex flex-row content-around justify-center gap-x-32 flex-wrap'>
+        <InformationCard HospitalName='Chulalongkorn Hospital' imgSrc='/img/chula.jpg' />
+        <InformationCard HospitalName='Rajavithi Hospital' imgSrc='/img/rajavithi.jpg' />
+        <InformationCard HospitalName='Thammasat University Hospital' imgSrc='/img/thammasat.jpg' />
       </div>
     </main>
   )

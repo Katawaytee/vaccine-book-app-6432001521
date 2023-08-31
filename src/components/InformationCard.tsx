@@ -1,19 +1,15 @@
-import styles from './informationcard.module.css';
 import Image from 'next/image';
 
-export default function ProductCard() {
+export default function InformationCard({HospitalName, imgSrc} : {HospitalName:string, imgSrc:string}) {
   return (
-    <div className={styles.card}>
-      <div className={styles.cardimg}>
-        <Image src={'/img/inf1.jpg'}
+    <div className='w-1/6 h-[300px] rounded-lg shadow-lg'>
+      <div className='w-full h-[70%] relative rounded-t-lg'>
+        <Image src={imgSrc}
         alt='Information Picture 1'
         fill={true}
-        objectFit='cover'/>
+        className='object-cover rounded-t-lg'/>
       </div>
-      <div className={styles.cardtextheading}>คำถาม</div>
-      <div className={styles.cardtext}>ทำไมจึงต้องฉีดวัคซีนไข้หวัดใหญ่ทุกปี</div>
-      <div className={styles.cardtextheading}>คำตอบ</div>
-      <div className={styles.cardtext}>เชื้อไวรัสไข้หวัดใหญ่ มีการเปลี่ยนแปลงทุกปี</div>
+      <div className='w-full h-[30%] p-[10px]'>{HospitalName}</div>
     </div>
   )
 }
