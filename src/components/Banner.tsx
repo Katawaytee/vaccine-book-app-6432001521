@@ -1,9 +1,13 @@
+'use client'
+import {useState} from 'react';
 import Image from 'next/image'
 
 export default function Banner() {
+  const covers = ['/img/cover.jpg','/img/cover2.jpg','/img/cover3.jpg','/img/cover4.jpg'];
+  const [index, setIndex] = useState(0);
   return (
-    <div className='block p-1 m-0 w-screen h-[80vh] relative'>
-      <Image src={'/img/cover.jpg'}
+    <div className='block p-1 m-0 w-screen h-[80vh] relative' onClick={()=>{setIndex(index+1)}}>
+      <Image src={covers[index%4]}
       alt='cover'
       fill={true}
       priority
