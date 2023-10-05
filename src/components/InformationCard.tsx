@@ -14,7 +14,9 @@ export default function InformationCard({HospitalName, imgSrc, value ,onRating }
         className='object-cover rounded-t-lg'/>
       </div>
       <div className='w-full h-[20%] p-[10px]'>{HospitalName}</div>
-      <Rating value={value} onChange={(e,newValue)=>{e.stopPropagation(); onRating([HospitalName,newValue]); }}/>
+      <Rating value={value} 
+      onClick={(e)=>{e.stopPropagation();}}
+      onChange={(e,newValue)=>{e.preventDefault(); onRating([HospitalName,newValue]); }}/>
     </InteractiveCard>
   )
 }
