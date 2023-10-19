@@ -3,7 +3,7 @@ import InteractiveCard from './InteractiveCard';
 import { Rating } from "@mui/material"
 
 export default function InformationCard({HospitalName, imgSrc, value ,onRating } : {HospitalName:string, imgSrc:string,
-  value:number, onRating:Function}) {
+  value?:number, onRating?:Function}) {
 
   return (
     <InteractiveCard contentName={HospitalName}>
@@ -14,9 +14,11 @@ export default function InformationCard({HospitalName, imgSrc, value ,onRating }
         className='object-cover rounded-t-lg'/>
       </div>
       <div className='w-full h-[20%] p-[10px]'>{HospitalName}</div>
-      <Rating value={value} 
-      onClick={(e)=>{e.stopPropagation();}}
-      onChange={(e,newValue)=>{e.preventDefault(); onRating([HospitalName,newValue]); }}/>
+      {
+        onRating? <Rating value={value} 
+        onClick={(e)=>{e.stopPropagation();}}
+        onChange={(e,newValue)=>{e.preventDefault(); onRating([HospitalName,newValue]); }}/>:''
+      }
     </InteractiveCard>
   )
 }
