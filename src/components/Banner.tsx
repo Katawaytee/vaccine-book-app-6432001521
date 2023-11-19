@@ -29,7 +29,7 @@ export default function Banner() {
         </div>:null
       }
 
-      <button className='bg-white text-cyan-600 border-cyan-600
+      <button data-testid="hospital-button" className='bg-white text-cyan-600 border-cyan-600
       font-semibold py-2 px-2 m-2 rounded z-30 absolute bottom-0 right-5
       hover:bg-cyan-600 hover:text-white hover:border-transparent'
       onClick={(e)=>{ e.stopPropagation(); router.push('/hospital'); }}>

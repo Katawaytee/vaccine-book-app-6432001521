@@ -12,6 +12,7 @@ export default async function TopMenu() {
       <Image src={'/img/logo.png'} className='h-full w-auto'
       alt='logo' width={0} height={0} sizes='100vh'/>
       <TopMenuItem title='Booking' pageRef='/booking'/>
+      <TopMenuItem title='Hospitals' pageRef='/hospital'/>
       <TopMenuItem className='absolute left-[100px] py-4' title='My Booking' pageRef='/mybooking'/>
 
       {/* {
